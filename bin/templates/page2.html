@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Layout Manager</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div style="max-width: 450px; align: center; margin: auto;">
+		<div th:replace="fragments/banner"></div>
+
+		<hr />
+
+		<h2>Page 2</h2>
+		<p>&nbsp;</p>
+
+		<form action="#" th:action="@{/page2}" th:object="${userInput}"
+			method="post">
+			<div>
+				<label for="userId">User Id</label> <input type="text"
+					th:field="*{userId}" min="50" max="50"></input> <label
+					for="password">Password</label> <input type="password"
+					th:field="*{password}" min="50" max="50"></input>
+			</div>
+
+			<div>
+				<p></p>
+			</div>
+
+			<div>
+				<input type="reset" th:value="Reset" /> <input type="submit"
+					id="btn-submit" name="btn-submit" th:value="Submit" />
+			</div>
+
+			<div>
+				<p></p>
+			</div>
+
+			<div>
+				<label for="selectText">Your input: </label> <input type="text"
+					th:field="*{selection}" size="50" readonly="readonly"></input>
+			</div>
+
+			<div>
+				<p></p>
+			</div>
+
+			<div>
+				<label for="clear">Clear session: </label> <input type="submit"
+					id="btn-clear" name="btn-clear" th:value="Clear"></input>
+			</div>
+
+		</form>
+	</div>
+</body>
+</html>
